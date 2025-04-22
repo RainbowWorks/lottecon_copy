@@ -115,3 +115,125 @@
 .main_visual .main_visual_slide .itm03 {
     background: url(../images/main_visual03.jpg) no-repeat center center/cover;
 }
+
+.main_news {
+    text-align: center;
+}
+
+.main_news .inner {
+    display: flex;
+    gap: 30px;
+}
+
+.main_news .inner .itm {
+    flex: 1;
+}
+
+.main_news .inner .itm img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.main_news .inner .itm strong {
+    display: block;
+    font-weight: 500;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.main_news .inner .itm p {
+    margin-top: 8px;
+    text-align: center;
+    font-size: 14px;
+    color: #8f8f8f;
+}
+
+.main_info {
+    background: #f9f9f9;
+}
+
+.main_info .title h2 {
+    text-align: center;
+}
+
+.main_info .title p {
+    text-align: center;
+}
+
+.main_info .inner {
+    max-width: 1290px;
+}
+
+.main_info .inner .bottom {
+    flex: 3;
+    display: flex;
+    gap: 8px;
+
+}
+
+.main_info .inner .bottom .itm {
+    flex: 1;
+
+    position: relative;
+}
+
+.main_info .inner .bottom .itm~.itm::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+
+    left: -24px;
+    background: #ddd;
+}
+
+
+.main_info .inner .bottom .itm strong {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.main_info .inner .bottom .itm p {
+    margin-top: 24px;
+}
+
+.main_info .inner .bottom .itm .date {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.main_pr .title h2 {
+    text-align: center;
+}
+
+.main_pr .title p {
+    text-align: center;
+}
+
+.main_pr .swiper-wrapper {
+    transition-timing-function: linear;
+}
+
+.main_pr .slide_wrap .itm img {
+    transform: scale(0.9);
+    /*여기서 작게 만들어놓고 hover에서 크게 만들면 이미지 잘리지 않는다.*/
+    transition: 0.4s;
+    /*천천히 커지는거 transition*/
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+
+}
+
+.main_pr .slide_wrap .itm img:hover {
+    transform: scale(1);
+    /*그냥 커지는거 transform*/
+}
+
+.main_pr .slide_wrap .itm p {
+    text-align: center;
+}

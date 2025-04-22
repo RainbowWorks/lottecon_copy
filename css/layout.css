@@ -9,6 +9,28 @@
 }
 
 .inner {
-    max-width: 1270px;
+    max-width: 1290px;
     margin: 0 auto;
+}
+
+.default {
+    padding: 80px 0;
+}
+
+.default .title {
+    max-width: 1290px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.default .title h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.default .title p {
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 16px;
+    color: #8f8f8f;
 }
