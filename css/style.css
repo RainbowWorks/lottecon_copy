@@ -1,50 +1,44 @@
 #header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    /*메뉴를 메일비주얼 위로 올려준다.*/
-}
+    border-bottom: #da291c 2px solid;
+    height: 72px;
 
-#header.on {
-    background: rgb(54, 47, 44, 0.75);
-    /*rgb로 바꿔주고 0.75적으면 비치게 된다. 비치는거 싫으면 1 주면된다.*/
+
 }
 
 #header .hd_wrap {
+    position: relative;
     display: flex;
-    /*가로배치*/
     justify-content: space-between;
-    /*1분코딩flex읽어봐*/
     align-items: center;
-    margin: 0 80px;
+    max-width: 1410px;
+    margin: 0 auto;
+    height: 64px;
+}
 
-    height: 80px;
+#header .gnb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
 }
 
 #header a {}
 
 #header h1 {
     flex: 0 0 156px;
-    /*늘어지지도 줄어들지도 말고 156px*/
-}
-
-#header h1 img {
-    height: 32px;
 }
 
 #header .gnb>ul {
     display: flex;
-    /*기준 잡기*/
-    gap: 40px;
+    gap: 56px;
 }
 
 #header .gnb>ul>li>a {
     display: block;
     line-height: 80px;
     white-space: nowrap;
-    color: #fff;
+    font-weight: 600;
 }
 
 #header .gnb>ul>li {
@@ -53,15 +47,11 @@
 
 #header .gnb>ul>li ul {
     position: absolute;
-    top: 72px;
+    top: 80px;
     left: 50%;
 
     transform: translate(-50%, 8px);
-
-    background-color: rgb(54, 47, 44, 0.75);
-    border: 1px solid #b79e93;
-    border-radius: 8px;
-    overflow: hidden;
+    background-color: #fff;
 
     opacity: 0;
     visibility: hidden;
@@ -75,180 +65,60 @@
     transform: translate(-50%, 0);
 }
 
+
 #header .gnb>ul>li ul a {
     display: block;
     padding: 0 24px;
-    color: #fff;
     white-space: nowrap;
     text-align: center;
     line-height: 40px;
     font-size: 14px;
-
-}
-
-#header .gnb>ul>li ul a:hover {
-    background: #fff;
-    color: #362f2c;
 }
 
 #header .gnb>ul>li ul li~li a {
-    border-top: 1px solid #b79e93;
+    border-top: 1px solid #ddd;
 }
 
 #header .utils a {
     display: flex;
     align-items: center;
-    gap: 8px;
-    color: #fff;
-    background: linear-gradient(to right, #ff6347, #f00);
-    /*신기한기술*/
+    gap: 16px;
+    font-weight: 600;
     height: 40px;
     padding: 0 24px;
     border-radius: 20px;
     white-space: nowrap;
-    /*반응형할때필요*/
 }
 
 #header .utils a span {
-    margin-top: -2px;
-    /*서비스기때문에 안적어도되는 부분. 창업안내 글자가 밑으로 내려가있어서 올려줬음*/
+    margin-top: -3px;
 }
 
 .main_visual {
     position: relative;
-    /*슬라이드 깔때 필요함*/
-    background: url(../images/main_visual01.png) no-repeat center center/cover;
-    /*no-repeat center center/cover 외워라*/
-    height: 640px;
-    /*높이 안깔리면 배경 안나온다.*/
+    z-index: 1;
 }
 
-.main_visual .slg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /*글자 가운데로 배치 top,left,transform 외워라*/
-
-    display: flex;
-    flex-direction: column;
-    /*flex의 방향을 바꿔준다, 자식 요소들이 위 → 아래(세로) 방향으로 정렬*/
-    align-items: center;
+.main_visual .main_visual_slide .itm {
+    position: relative;
+    height: calc(100vh - 80px);
 }
 
-.main_visual .slg h2 {
-    color: #fff;
-    font-size: 40px;
-    font-weight: 600;
-    text-align: center;
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-    /*글자테두리만들기 수치, 농도 조절하면됨*/
+.main_visual .main_visual_slide .itm01 {
+    background: url(../images/main_visual01.jpg) no-repeat center center/cover;
 }
 
-.main_visual .slg p {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-    margin-top: 24px;
-    /*위를 띄워줌*/
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+.main_visual .main_visual_slide .itm02 {
+    background: url(../images/main_visual02.jpg) no-repeat center center/cover;
 }
 
-.main_visual .slg a {
-    margin-top: 16px;
+.main_visual .main_visual_slide .itm03 {
+    background: url(../images/main_visual03.jpg) no-repeat center center/cover;
 }
 
-.main_menu .swiper-wrapper {
-    transition-timing-function: linear;
-    /*linear 등속으로 가라?*/
-}
-
-.main_menu .slide_wrap .itm img {
-    transform: scale(0.9);
-    /*여기서 작게 만들어놓고 hover에서 크게 만들면 이미지 잘리지 않는다.*/
-    transition: 0.4s;
-    /*천천히 커지는거 transition*/
-}
-
-.main_menu .slide_wrap .itm img:hover {
-    transform: scale(1);
-    /*그냥 커지는거 transform*/
-}
-
-.main_menu .slide_wrap .itm strong {
-    display: block;
-    /*박스가 아니니까 디스플레이 블럭으로 박스를 만들어준다.*/
-    text-align: center;
-    margin-bottom: 16px;
-    font-weight: 600;
-}
-
-.main_menu .slide_wrap .itm p {
+.main_news {
     text-align: center;
 }
-
-.main_menu .btn_wrap {
-    margin-top: 40px;
-    text-align: center;
-}
-
-/*여기부터 중요한 파트다. 나누는 방법 배우고 있음*/
-.main_info {
-    background: #f9f9f9;
-    /*배경색*/
-}
-
-.main_info .inner {
-    display: flex;
-    /*가로배치*/
-    align-items: center;
-    gap: 30px;
-}
-
-.main_info .title h2 span {
-    display: block;
-    /*아래 위 글을 줄바꿈 해준다.*/
-    margin-bottom: 16px;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.main_info .inner .left {
-    flex: 1;
-}
-
-.main_info .inner .right {
-    flex: 3;
-
-    display: flex;
-    /*3개 가로배치된다.*/
-    gap: 30px;
-}
-
-/*flex1, flex3은 left가 1을 가지고 right가 3을 가진다.*/
-
-.main_info .inner .right .itm {
-    flex: 1;
-    /*나눠준거 한칸씩 차지한다.*/
-
-    border-top: 1px solid #333;
-    /*아이템 위 줄 만들어주기*/
-    padding-top: 64px;
-}
-
-.main_info .inner .right .itm strong {
-    font-size: 40px;
-    font-weight: 600;
-    font-family: "Noto Serif KR", serif;
-}
-
-.main_info .inner .right .itm p {
-    margin-top: 24px;
-    /*p는 박스이니까 마진 탑 가능하다*/
-}
-
-.main_news {}
 
 .main_news .inner {
     display: flex;
@@ -257,53 +127,113 @@
 
 .main_news .inner .itm {
     flex: 1;
-    /*한 칸씩 차지하도록*/
 }
 
 .main_news .inner .itm img {
     width: 100%;
-    height: 290px;
+    height: 320px;
     object-fit: cover;
-    /*사진 크기 조절, 단점은 사진이 잘린다.*/
+}
+
+.main_news .inner .itm strong {
+    display: block;
+    font-weight: 500;
+    margin-top: 16px;
+    text-align: center;
 }
 
 .main_news .inner .itm p {
-    margin-top: 16px;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 14px;
+    color: #8f8f8f;
 }
 
-.main_house {
+.main_info {
+    background: #f9f9f9;
+}
+
+.main_info .title h2 {
+    text-align: center;
+}
+
+.main_info .title p {
+    text-align: center;
+}
+
+.main_info .inner {
+    max-width: 1290px;
+}
+
+.main_info .inner .bottom {
+    flex: 3;
+    display: flex;
+    gap: 8px;
+
+}
+
+.main_info .inner .bottom .itm {
+    flex: 1;
+
     position: relative;
-    /*before에 기준이 필요하니까 relative적어줘야한다.*/
-    padding: 120px;
-    /*이미지 세로 길이가 짧다 생각하면 늘리면된다.*/
-    background: url(../images/main_house.jpg) no-repeat center center/cover;
-    background-attachment: fixed;
 }
 
-.main_house::before {
-    /*배경 톤다운*/
+.main_info .inner .bottom .itm~.itm::before {
     content: "";
     position: absolute;
-    inset: 0 0 0 0;
-    /*인셋 좌표를 한꺼번에 줄 때 사용*/
-    background: #000;
-    /*순수한 검정을 꼭 사용해야한다. 다른색 사용하면 깨끗한 정도가 달라진다.*/
-    opacity: 0.5;
-    /*4분의1정도면 0.25*/
+    top: 0;
+    bottom: 0;
+    width: 1px;
+
+    left: -24px;
+    background: #ddd;
 }
 
-.main_house .title {
-    position: relative;
-    /*어두워졌던 타이틀을 앞으로 빼준다*/
-    margin-bottom: 0;
-    /*글자가 가운데에 위치하게 된다.*/
+
+.main_info .inner .bottom .itm strong {
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.main_house .title h2 {
-    color: #fff;
+.main_info .inner .bottom .itm p {
+    margin-top: 24px;
 }
 
-.main_house .title p {
-    margin-bottom: 48px;
-    color: #fff;
+.main_info .inner .bottom .itm .date {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.main_pr .title h2 {
+    text-align: center;
+}
+
+.main_pr .title p {
+    text-align: center;
+}
+
+.main_pr .swiper-wrapper {
+    transition-timing-function: linear;
+}
+
+.main_pr .slide_wrap .itm img {
+    transform: scale(0.9);
+    /*여기서 작게 만들어놓고 hover에서 크게 만들면 이미지 잘리지 않는다.*/
+    transition: 0.4s;
+    /*천천히 커지는거 transition*/
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+
+}
+
+.main_pr .slide_wrap .itm img:hover {
+    transform: scale(1);
+    /*그냥 커지는거 transform*/
+}
+
+.main_pr .slide_wrap .itm p {
+    text-align: center;
 }

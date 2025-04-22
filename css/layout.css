@@ -1,3 +1,13 @@
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+
+}
+
 .inner {
     max-width: 1290px;
     margin: 0 auto;
@@ -11,33 +21,16 @@
     max-width: 1290px;
     margin: 0 auto;
     margin-bottom: 40px;
-    /*전체적으로 타이틀 아래 마진 주는 방법*/
 }
 
 .default .title h2 {
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 600;
-    font-family: "Noto Serif KR", serif;
 }
 
 .default .title p {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 400;
     margin-top: 16px;
-}
-
-.default_btn {
-    /*디폴트 버튼을 만들어놓고 계속 사용할거다.*/
-    display: inline-flex;
-    align-items: center;
-    padding: 0 24px;
-    /*top 0 right 24 bottom 0 left 24*/
-    height: 40px;
-    background: #362f2c;
-    color: #fff;
-
-    border-radius: 8px;
-    /*모서리 둥글게*/
-    white-space: nowrap;
-    /*글자 한줄로*/
+    color: #8f8f8f;
 }
